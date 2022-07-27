@@ -20,6 +20,27 @@ void insertion(int A[], int num)
 		A[j + 1] = a; 
 	}
 }
+void selection(int A[], int num)
+{
+	int i,j,pos,new;
+	for(i = 0; i < num - 1; i++)
+	{
+		pos=i;
+		for(j = i + 1; j < num; j++)
+		{
+			if(A[pos] > A[j])
+			{
+				pos=j;
+			}
+		}
+		if(pos != i)
+		{
+			new = A[i];
+			A[i] = A[pos];
+			A[pos] = new;
+		}
+	}
+}
 int main(void)
 {
 	int n,sort;
@@ -43,6 +64,9 @@ int main(void)
 	{
 		case 1:
 		insertion(Arr, n);
+		break;
+		case 2:
+		selection(Arr, n);
 		break;
 		default:
 		printf("Invalid sort type\n");
