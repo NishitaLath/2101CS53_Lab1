@@ -30,6 +30,9 @@ int main(void)
 			case 2:
 			res=a-b;
 			break;
+			case 3:
+			res=a*b;
+			break;
 		}
 		printf("The result is= %f \n", res);
 	}
