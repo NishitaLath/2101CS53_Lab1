@@ -111,6 +111,38 @@ void mergeSort(int A[], int l, int r)
 		merge(A, l, m, r);
 	}
 }
+void quick(int A[], int first, int last)
+{
+	int i, j, pt, temp;
+	if(first<last)
+	{
+		pt = first;
+		i = first;
+		j = last;
+		while(i<j)
+		{
+			while(A[i]<=A[pt]&&i<last)
+			{
+				i++;
+			}
+			while(A[j]>A[pt])
+			{
+				j--;
+			}
+			if(i<j)
+			{
+				temp = A[i];
+				A[i] = A[j];
+				A[j] = temp;
+			}
+		}
+		temp = A[pt];
+		A[pt] = A[j];
+		A[j] = temp;
+		quick(A,first,j-1);
+		quick(A,j+1,last);
+	}
+}
 int main(void)
 {
 	int n,sort;
@@ -143,6 +175,9 @@ int main(void)
 		break;
 		case 4:
 		mergeSort(Arr, 0, n-1);
+		break;
+		case 5:
+		quick(Arr, 0, n-1);
 		break;
 		default:
 		printf("Invalid sort type\n");
