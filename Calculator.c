@@ -19,6 +19,7 @@ int main(void)
 		printf("Division cannot be performed");
 	}
 	//Performing the operations
+	//Checking if operators are valid
 	else if(op==1 || op==2 || op==3 || op==4)
 	{
 		float res;
@@ -27,12 +28,15 @@ int main(void)
 			case 1:
 			res=a+b;
 			break;
+
 			case 2:
 			res=a-b;
 			break;
+
 			case 3:
 			res=a*b;
 			break;
+
 			case 4:
 			res=a/b;
 			break;
@@ -41,6 +45,7 @@ int main(void)
 	}
 	else
 	{
+		//Error Message
 		printf("Invalid Operator");
 	}
 	return 0;
