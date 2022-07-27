@@ -41,6 +41,22 @@ void selection(int A[], int num)
 		}
 	}
 }
+void bubble(int A[], int num)
+{
+	int i, j;
+	for (i = 0; i < num - 1; i++)
+	{
+		for (j = 0; j < num - i - 1; j++)
+		{
+			if (A[j] > A[j + 1])
+			{
+				int temp = A[j];
+				A[j] = A[j+1];
+				A[j+1]= temp;
+			}
+		}
+	}
+}
 int main(void)
 {
 	int n,sort;
@@ -67,6 +83,9 @@ int main(void)
 		break;
 		case 2:
 		selection(Arr, n);
+		break;
+		case 3:
+		bubble(Arr, n);
 		break;
 		default:
 		printf("Invalid sort type\n");
