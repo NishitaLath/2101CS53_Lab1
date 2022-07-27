@@ -1,10 +1,11 @@
 #include<stdio.h>
-//Sorting an array using:
-//1)Insertion Sort
-//2)Selection Sort
-//3)Bubble Sort
-//4)Merge Sort
-//5)Quick Sort
+/*Sorting an array using:
+1)Insertion Sort
+2)Selection Sort
+3)Bubble Sort
+4)Merge Sort
+5)Quick Sort*/
+//Insertion Sort
 void insertion(int A[], int num)
 {
 	int i, a, j; 
@@ -20,6 +21,7 @@ void insertion(int A[], int num)
 		A[j + 1] = a; 
 	}
 }
+//Selection Sort
 void selection(int A[], int num)
 {
 	int i,j,pos,new;
@@ -41,6 +43,7 @@ void selection(int A[], int num)
 		}
 	}
 }
+//Bubble Sort
 void bubble(int A[], int num)
 {
 	int i, j;
@@ -101,6 +104,7 @@ void merge(int array[], int l, int m, int r)
 		t++;
 	}
 }
+//Merge sort
 void mergeSort(int A[], int l, int r)
 {
 	if (l < r)
@@ -111,6 +115,7 @@ void mergeSort(int A[], int l, int r)
 		merge(A, l, m, r);
 	}
 }
+//Quick Sort
 void quick(int A[], int first, int last)
 {
 	int i, j, pt, temp;
